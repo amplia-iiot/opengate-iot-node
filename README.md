@@ -16,7 +16,7 @@ To deploy the OpenGate IOT node in your Node-RED server
 
 ```shell
 # Clone the repository
-git clone https://github.com/fjdearcos-amplia/opengate-iot-node <opengate-iot-node-location>
+git clone https://github.com/amplia-iiot/opengate-iot-node.git <opengate-iot-node-location>
 # Move to your node-red location (usually $USER/.node-red)
 cd <node-red-location>
 # Install OpenGate IOT node
