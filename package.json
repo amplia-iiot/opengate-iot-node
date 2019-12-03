@@ -1,0 +1,32 @@
+{
+  "name": "nodered-contrib-amplia-opengate-iot",
+  "version": "1.0.0",
+  "description": "Send IOT data to OpenGate platform",
+  "main": "src/opengate-iot.js",
+  "scripts": {
+    "test": "test/opengate-iot-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fjdearcos-amplia/opengate-iot.git"
+  },
+  "keywords": [
+    "nodered",
+    "opengate",
+    "iot"
+  ],
+  "author": "Fco. Javier de Arcos - Amplía Soluciones",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/fjdearcos-amplia/opengate-iot/issues"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "homepage": "https://github.com/fjdearcos-amplia/opengate-iot#readme",
+  "node-red": {
+    "nodes": {
+      "opengate-iot": "src/opengate-iot.js"
+    }
+  }
+}
