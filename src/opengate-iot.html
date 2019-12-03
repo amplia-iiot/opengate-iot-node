@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    RED.nodes.registerType('opengate-iot',{
+        category: 'OpenGate',
+        color: '#FFA72F',
+        defaults: {
+            name: {value:"OpenGate IOT"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "opengate.png",
+        paletteLabel: function() {
+            return this.name||"opengate-iot";
+        },
+        label: function() {
+            return this.name||"opengate-iot";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="opengate-iot">
+</script>
+
+<script type="text/x-red" data-help-name="opengate-iot">
+    <p>Sends IOT data to OpenGate.</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>deviceId <span class="property-type">string</span></dt>
+        <dd>Device identifier in OpenGate IOT platform.</dd>
+        <dt>apiKey <span class="property-type">string</span></dt>
+        <dd>OpenGate API Key to authenticate the sender of the IOT data.</dd>
+        <dt class="optional">at <span class="property-type">number</span></dt>
+        <dd>IOT data timestamp. If not set the current execution timestamp is taken.</dd>
+        <dt>payload <span class="property-type">object</span></dt>
+        <dd>Datastream values to be sent, identified by the property key, and with the property value as datastream value.</dd>
+    </dl>
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+        <dt>payload <span class="property-type">string | object | buffer</span></dt>
+        <dd>The body of the response. The node can be configured to return the body
+             as a string, attempt to parse it as a JSON string or leave it as a
+             binary buffer.</dd>
+        <dt>statusCode <span class="property-type">number</span></dt>
+        <dd>The status code of the response, or the error code if the request could not be completed.</dd>
+        <dt>error <span class="property-type">string</span></dt>
+        <dd>In case any any error occurred while processing the request, this property is an error description.</dd>
+    </dl>
+    <h3>Details</h3>
+    <p>This node can be used to send IOT data to OpenGate platform.</p>
+    <p>A valid API-Key must be provided in the <code>msg.apiKey</code> property and the OpenGate device identifier in the <code>msg.deviceId</code>.
+    This allow OpenGate to authenticate the sender of the device information to check if it is valid.</p>
+    <p>The <code>msg.at</code> property is optional and provides information about the time the data was taken. If not present, the execution time is taken.</p>
+    <p>The data to be sent to OpenGate is provided in the <code>msg.payload</code>. All properties inside <code>msg.payload</code> are sent with the property name
+    as datastream identifier and property value as datastream value. The values may be strings, numbers and complex objects, that are sent to OpenGate as they are.</p>
+    <p> The node gives information about the OpenGate Request result as output, with the HTTP status code in <code>msg.statusCode</code>, response body in <code>
+    msg.payload</code> and error description if exists in <code>msg.error</code>.</p>
+</script>
