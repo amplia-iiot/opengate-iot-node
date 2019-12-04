@@ -29,6 +29,8 @@ The build includes two ODA assemblies to make some test with our software using 
 
 Run Node-RED as usual and you will find the OpenGate IOT node added to your nodes under the OpenGate category.
 
+A flow example could be found in the [examples](examples) folder.
+
 ```shell
 node-red
 ```

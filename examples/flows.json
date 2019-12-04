@@ -1,0 +1,1 @@
+[{"id":"e1eaba3a.984e9","type":"function","z":"658128b7.7e50c8","name":"Prepare parameters","func":"msg.deviceId = msg.payload.deviceId;\nmsg.apiKey = msg.payload.apiKey;\nmsg.at = msg.payload.at;\nmsg.payload = msg.payload.payload;\nreturn msg;","outputs":1,"noerr":0,"x":500,"y":80,"wires":[["2050b242.73b126","f931edcd.1662a8"]]}]
